@@ -67,7 +67,7 @@ SELECT ?founder ?name
 WHERE
   { SERVICE  <https://query.wikidata.org/bigdata/namespace/wdq/sparql> 
     {
-      # Finding that one Porsche that is in the automotive industry.          
+      # Finding that one Porsche that is in the automotive industry and its founders.        
       ?s rdfs:label "Porsche"@en ;
                              p:P452 ?industry ;
                              p:P112 ?founders .
