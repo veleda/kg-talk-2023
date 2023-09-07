@@ -1,0 +1,16 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/> .
+
+ex:Porsche rdf:type foaf:Organization ;
+           rdfs:label "Dr. Ing. h.c. F. Porsche AG" ;
+           ex:location ex:Germany ;
+           ex:founder ex:FerdinandPorsche ;
+           ex:founded "1931"^^xsd:gYear .
+
+ex:FerdinandPorsche rdf:type foaf:Person ;
+                    foaf:name "Ferdinand Porsche" ;
+                    rdfs:seeAlso wd:Q57249 .

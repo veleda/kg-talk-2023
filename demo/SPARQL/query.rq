@@ -1,0 +1,25 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX ex: <http://example.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT ?founder ?name
+WHERE
+  { SERVICE  <https://query.wikidata.org/bigdata/namespace/wdq/sparql> 
+    {                           
+      ?s rdfs:label "Porsche"@en ;
+                             p:P452 ?industry ;
+                             p:P112 ?founders .
+    
+    ?founders ?p1 ?founder .
+    ?founder rdfs:label ?name .
+    FILTER(LANG(?name) = 'en')
+    
+    ?industry ?p ?o .
+    ?o rdfs:label "automotive industry"@en .
+    
+    }
+  }
